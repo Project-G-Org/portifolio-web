@@ -14,15 +14,11 @@ const config: Config = {
       xl: '1440px',
     },
     colors: {
-      blue: '#1fb6ff',
-      purple: '#7e5bef',
-      pink: '#ff49db',
-      orange: '#ff7849',
-      green: '#13ce66',
-      yellow: '#ffc82c',
-      graydark: '#273444',
-      gray: '#8492a6',
-      graylight: '#d3dce6',
+      blue: '#4E93BC',
+      redlight: '#DA6666',
+      reddark: '#9C4E4E',
+      graydark: '#434343',
+      graylight: '#FFFFFF',
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
@@ -39,4 +35,5 @@ const config: Config = {
     },
   },
 }
+
 export default config
