@@ -10,6 +10,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "material-symbols": "^0.24.0",
     "next": "14.2.13",
     "react": "^18",
     "react-dom": "^18"

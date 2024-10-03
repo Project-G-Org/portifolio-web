@@ -31,7 +31,45 @@ export default function Home() {
         </h1>
       </header>
 
-      <main className="flex flex-col items-center gap-16 w-full py-16"></main>
+      <section className="flex flex-col items-center gap-14 w-full py-16">
+        <article className="flex flex-col w-full gap-5">
+          <div className="flex flex-row space justify-between w-full">
+            <div className="flex flex-row gap-4 align-middle items-center">
+              <span className="material-symbols-outlined text-reddark text-3xl">
+                smartphone
+              </span>
+              <h3 className="text-lg font-bold text-reddark">
+                Desenvolvimento de aplicativos móveis
+              </h3>
+            </div>
+            <p className="text-lg max-w-2xl text-gray">
+              a We have vast experience developing SaaS products from scratch
+              and improving existing solutions. Our intuitive and tailored
+              designs convert and keep your users engaged.
+            </p>
+          </div>
+          <hr className="opacity-40" />
+        </article>
+
+        <article className="flex flex-col w-full gap-5">
+          <div className="flex flex-row space justify-between w-full">
+            <div className="flex flex-row gap-4 align-middle items-center">
+              <span className="material-symbols-outlined text-reddark text-3xl">
+                smartphone
+              </span>
+              <h3 className="text-lg font-bold text-reddark">
+                Desenvolvimento de aplicativos móveis
+              </h3>
+            </div>
+            <p className="text-lg max-w-2xl text-gray">
+              a We have vast experience developing SaaS products from scratch
+              and improving existing solutions. Our intuitive and tailored
+              designs convert and keep your users engaged.
+            </p>
+          </div>
+          <hr className=" opacity-40" />
+        </article>
+      </section>
 
       <footer className="w-full py-8 bg-graydark text-white text-center">
         <p>© 2024 Vigel </p>

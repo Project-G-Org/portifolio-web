@@ -18,6 +18,7 @@ const config: Config = {
       redlight: '#DA6666',
       reddark: '#9C4E4E',
       graydark: '#434343',
+      gray: '#595959',
       graylight: '#FFFFFF',
     },
     fontFamily: {
