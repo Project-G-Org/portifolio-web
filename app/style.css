@@ -1,0 +1,6 @@
+@import url(./globals.css);
+
+footer * {
+    font-size: large;
+    color: #fff;
+}

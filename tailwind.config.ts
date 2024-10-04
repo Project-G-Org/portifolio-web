@@ -19,7 +19,9 @@ const config: Config = {
       reddark: '#9C4E4E',
       graydark: '#434343',
       gray: '#595959',
+      black: '#232638',
       graylight: '#FFFFFF',
+      placeholder: '#D9D9D9',
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
