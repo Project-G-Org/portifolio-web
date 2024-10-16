@@ -53,8 +53,8 @@ const Carousel: React.FC = () => {
           style={{
             transform: `translateX(${imageDistancePercent}%)`,
             zIndex: 5,
-            width: `${unfocusedImagesSize.width}px`, // Set width on the div
-            height: `${unfocusedImagesSize.height}px`, // Set height on the div
+            width: `${unfocusedImagesSize.width}px`,
+            height: `${unfocusedImagesSize.height}px`,
           }}
         >
           <Image
@@ -70,8 +70,8 @@ const Carousel: React.FC = () => {
         <div
           className="relative z-10 mx-4"
           style={{
-            width: `${focusedImageSize.width}px`, // Set width on the div
-            height: `${focusedImageSize.height}px`, // Set height on the div
+            width: `${focusedImageSize.width}px`,
+            height: `${focusedImageSize.height}px`,
           }}
         >
           <Image
@@ -88,8 +88,8 @@ const Carousel: React.FC = () => {
           style={{
             transform: `translateX(-${imageDistancePercent}%)`,
             zIndex: 5,
-            width: `${unfocusedImagesSize.width}px`, // Set width on the div
-            height: `${unfocusedImagesSize.height}px`, // Set height on the div
+            width: `${unfocusedImagesSize.width}px`,
+            height: `${unfocusedImagesSize.height}px`,
           }}
         >
           <Image

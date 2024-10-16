@@ -4,8 +4,48 @@ import Image from 'next/image'
 import './style.css'
 import Carousel from './components/Carousel'
 import SmileyIcon from './components/SmileyIcons'
+import { useEffect, useRef } from 'react'
 
 export default function Home() {
+  const servicesRef = useRef(null)
+  const teamRef = useRef(null)
+  const testimonialsRef = useRef(null)
+  const faqsRef = useRef(null)
+  const footerRef = useRef(null)
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null, // Use the viewport as the root
+      rootMargin: '0px',
+      threshold: 0.2, // Trigger when 20% of the section is visible
+    }
+
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show')
+        } else {
+          // Optional: Remove animation when section is out of view
+          entry.target.classList.remove('show')
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(
+      handleIntersection,
+      observerOptions,
+    )
+
+    observer.observe(servicesRef.current!)
+    observer.observe(teamRef.current!)
+    observer.observe(testimonialsRef.current!)
+    observer.observe(faqsRef.current!)
+    observer.observe(footerRef.current!)
+
+    // Cleanup the observer when the component unmounts
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <div className="flex flex-col min-h-screen bg-graylight font-sans">
       <main className="flex flex-col">
@@ -50,8 +90,11 @@ export default function Home() {
           <SmileyIcon />
         </header>
 
-        {/* Services */}
-        <section className="flex flex-col gap-14 w-full py-16">
+        {/* ANCHOR - Services */}
+        <section
+          ref={servicesRef}
+          className="flex flex-col gap-14 w-full py-16 section-hidden"
+        >
           <h2 className="text-3xl font-extrabold text-graydark">
             NOSSOS SERVIÇOS
           </h2>
@@ -133,7 +176,10 @@ export default function Home() {
           </article>
         </section>
 
-        <section className="flex flex-col gap-14 w-full py-16">
+        <section
+          className="flex flex-col gap-14 w-full py-16 section-hidden"
+          ref={teamRef}
+        >
           <h2 className="text-3xl font-extrabold text-graydark">
             SOBRE A EQUIPE
           </h2>
@@ -149,40 +195,45 @@ export default function Home() {
         </section>
 
         {/* ANCHOR - Testimonials */}
-        <section
-          id="testimonials"
-          className="flex flex-col gap-14 py-16 px-12 bg-black v-[100vw] h-[102vh]"
-        >
-          <h2 className="text-3xl font-extrabold">NOSSOS CLIENTES</h2>
+        <section id="testimonials" className=" bg-black v-[100vw] h-[102vh]">
+          <section
+            className="flex flex-col gap-14 py-16 px-12 section-hidden"
+            ref={testimonialsRef}
+          >
+            <h2 className="text-3xl font-extrabold">NOSSOS CLIENTES</h2>
 
-          <article className="flex flex-row w-full gap-28 align-middle justify-center">
-            <Image
-              className="rounded-lg shadow-graylight"
-              src={'/assets/vitto.png'}
-              alt={''}
-              width={402}
-              height={402}
-            />
+            <article className="flex flex-row w-full gap-28 align-middle justify-center">
+              <Image
+                className="rounded-lg shadow-graylight"
+                src={'/assets/vitto.png'}
+                alt={''}
+                width={402}
+                height={402}
+              />
 
-            <Image
-              className="rounded-lg shadow-graylight"
-              src={'/assets/senai.png'}
-              alt={''}
-              width={402}
-              height={402}
-            />
+              <Image
+                className="rounded-lg shadow-graylight"
+                src={'/assets/senai.png'}
+                alt={''}
+                width={402}
+                height={402}
+              />
 
-            <Image
-              className="rounded-lg shadow-graylight"
-              src={'/assets/senai.png'}
-              alt={''}
-              width={402}
-              height={402}
-            />
-          </article>
+              <Image
+                className="rounded-lg shadow-graylight"
+                src={'/assets/senai.png'}
+                alt={''}
+                width={402}
+                height={402}
+              />
+            </article>
+          </section>
         </section>
 
-        <section className="flex flex-col gap-14 w-full py-16">
+        <section
+          className="flex flex-col gap-14 w-full py-16 section-hidden"
+          ref={faqsRef}
+        >
           <h2 className="text-3xl font-extrabold text-graydark">FAQS</h2>
 
           <ul role="list" className="divide-y divide-gray-100">
@@ -231,7 +282,9 @@ export default function Home() {
         </section>
       </main>
 
-      <Footer />
+      <div className="section-hidden w-full" ref={footerRef}>
+        <Footer />
+      </div>
     </div>
   )
 }

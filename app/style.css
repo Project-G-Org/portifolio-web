@@ -10,7 +10,6 @@ footer * {
 }
 
 header,
-footer,
 section:not(#testimonials) {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -19,4 +18,17 @@ section:not(#testimonials) {
 section#testimonials {
     color: #fff;
     scroll-snap-align: start;
+}
+
+.section-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    /* Adjust the initial translation as needed */
+    transition: opacity 0.4s ease-in-out, transform 0.5s ease-in-out;
+    /* Adjust duration and easing as needed */
+}
+
+.section-hidden.show {
+    opacity: 1;
+    transform: translateY(0);
 }
