@@ -18,6 +18,5 @@ section:not(#testimonials) {
 
 section#testimonials {
     color: #fff;
-    width: 100vw;
     scroll-snap-align: start;
 }

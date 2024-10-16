@@ -7,7 +7,7 @@ import Carousel from './components/Carousel'
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-graylight font-sans">
-      <main className="flex flex-col p-12">
+      <main className="flex flex-col">
         <header className="w-full py-6 bg-opacity-0 text-white text-center flex gap-20">
           <svg
             width="124"
@@ -163,10 +163,6 @@ export default function Home() {
           </article>
         </section>
 
-        <section className="flex flex-col items-center gap-28 mx-[-50px] w-full h-[800px] py-10 bg-black text-white text-center justify-center">
-          {/* Conteúdo da section */}
-        </section>
-
         <section className="flex flex-col gap-14 w-full py-16">
           <h2 className="text-3xl font-extrabold text-graydark">
             SOBRE A EQUIPE
@@ -185,7 +181,7 @@ export default function Home() {
         {/* ANCHOR - Testimonials */}
         <section
           id="testimonials"
-          className="flex flex-col gap-14 py-16 px-12 bg-black w-full h-[100vh]"
+          className="flex flex-col gap-14 py-16 px-12 bg-black v-[100vw] h-[102vh]"
         >
           <h2 className="text-3xl font-extrabold">NOSSOS CLIENTES</h2>
 
