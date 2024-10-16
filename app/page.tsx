@@ -1,6 +1,7 @@
 'use client'
 
 import './style.css'
+import Carousel from './components/Carousel'
 
 export default function Home() {
   return (
@@ -54,6 +55,15 @@ export default function Home() {
                 <br></br>REALIDADE
               </span>
             </h1>
+
+            <div className="min-h-screen flex flex-col items-center justify-center">
+              <main className="w-full flex flex-col items-center justify-center">
+                <h1 className="text-4xl font-bold mb-8">
+                  Carrossel com Next.js e Tailwind
+                </h1>
+                <Carousel />
+              </main>
+            </div>
           </div>
           <svg
             width="124"
@@ -193,13 +203,13 @@ export default function Home() {
           <div className="flex flex-row gap-8 align-middle justify-center">
             <button
               className="w-[16vw] h-[5.5vh] rounded-lg bg-redlight border-graylight hover:ease-in transition-all duration-100 ease-in-out hover:bg-graylight hover:border hover:border-graylight hover:text-redlight"
-              onClick={() => { }}
+              onClick={() => {}}
             >
               Marque uma call
             </button>
             <button
               className="w-[16vw] h-[5.5vh] rounded-lg  border-redlight border hover:text-redlight transition-all duration-150"
-              onClick={() => { }}
+              onClick={() => {}}
             >
               Nos mande um email
             </button>
