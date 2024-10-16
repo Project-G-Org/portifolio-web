@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Image from 'next/image'
 
 interface Slide {
   id: number
@@ -6,10 +7,14 @@ interface Slide {
 }
 
 const slides: Slide[] = [
-  { id: 1, imageUrl: './img/slide1.png' },
-  { id: 2, imageUrl: './img/slide2.png' },
-  { id: 3, imageUrl: './img/slide3.png' },
+  { id: 1, imageUrl: '/img/slide1.png' },
+  { id: 2, imageUrl: '/img/slide2.png' },
+  { id: 3, imageUrl: '/img/slide3.png' },
 ]
+
+const imageDistancePercent = 10
+const focusedImageSize = { width: 1050, height: 500 }
+const unfocusedImagesSize = { width: 650, height: 450 }
 
 const Carousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -33,8 +38,8 @@ const Carousel: React.FC = () => {
     currentIndex === slides.length - 1 ? 0 : currentIndex + 1
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto">
-      <div className="overflow-hidden flex justify-center items-center relative">
+    <div className="relative w-full max-w-6xl mx-auto">
+      <div className="overflow-hidden flex justify-center items-center relative carousel-container">
         {/* Área clicável à esquerda */}
         <div
           className="absolute left-0 top-0 h-full w-1/4 cursor-pointer z-20 hidden lg:block"
@@ -46,24 +51,33 @@ const Carousel: React.FC = () => {
           className="relative cursor-pointer hidden lg:block"
           onClick={prevSlide}
           style={{
-            transform: 'translateX(25%)',
+            transform: `translateX(${imageDistancePercent}%)`,
             zIndex: 5,
+            width: `${unfocusedImagesSize.width}px`, // Set width on the div
+            height: `${unfocusedImagesSize.height}px`, // Set height on the div
           }}
         >
-          <img
+          <Image
             src={slides[getPreviousIndex()].imageUrl}
             alt={`Slide ${slides[getPreviousIndex()].id}`}
-            style={{ width: '650px', height: '350px' }}
+            fill // Make the image fill its container
+            style={{ objectFit: 'cover' }} // Ensure consistent sizing
             className="opacity-50 blur-sm"
           />
         </div>
 
         {/* Imagem Central */}
-        <div className="relative z-10 mx-4">
-          <img
+        <div
+          className="relative z-10 mx-4"
+          style={{
+            width: `${focusedImageSize.width}px`, // Set width on the div
+            height: `${focusedImageSize.height}px`, // Set height on the div
+          }}
+        >
+          <Image
             src={slides[currentIndex].imageUrl}
             alt={`Slide ${slides[currentIndex].id}`}
-            style={{ width: '1050px', height: '500px' }} 
+            fill // Make the image fill its container
           />
         </div>
 
@@ -72,14 +86,17 @@ const Carousel: React.FC = () => {
           className="relative cursor-pointer hidden lg:block"
           onClick={nextSlide}
           style={{
-            transform: 'translateX(-25%)',
+            transform: `translateX(-${imageDistancePercent}%)`,
             zIndex: 5,
+            width: `${unfocusedImagesSize.width}px`, // Set width on the div
+            height: `${unfocusedImagesSize.height}px`, // Set height on the div
           }}
         >
-          <img
+          <Image
             src={slides[getNextIndex()].imageUrl}
             alt={`Slide ${slides[getNextIndex()].id}`}
-            style={{ width: '650px', height: '350px' }}
+            fill // Make the image fill its container
+            style={{ objectFit: 'cover' }} // Ensure consistent sizing
             className="opacity-50 blur-sm"
           />
         </div>
