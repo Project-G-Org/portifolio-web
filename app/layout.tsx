@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scrool-smooth focus:scroll-auto">
       <body className={`antialiased`}>{children}</body>
     </html>
   )

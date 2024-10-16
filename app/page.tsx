@@ -1,11 +1,12 @@
 'use client'
 
+import Image from 'next/image'
 import './style.css'
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-graylight font-sans">
-      <main className="flex flex-col p-12">
+      <main className="flex flex-col py-6">
         <header className="w-full py-6 bg-opacity-0 text-white text-center flex gap-20 flex-col">
           <nav className="flex justify-center gap-6">
             <a
@@ -37,6 +38,7 @@ export default function Home() {
           </h1>
         </header>
 
+        {/* Services */}
         <section className="flex flex-col gap-14 w-full py-16">
           <h2 className="text-3xl font-extrabold text-graydark">
             NOSSOS SERVIÇOS
@@ -53,9 +55,9 @@ export default function Home() {
                 </h3>
               </div>
               <p className="text-lg max-w-2xl text-gray">
-                a We have vast experience developing SaaS products from scratch
-                and improving existing solutions. Our intuitive and tailored
-                designs convert and keep your users engaged.
+                Criamos aplicativos mobile personalizados que ajudam sua empresa
+                a se conectar melhor com clientes, melhorar processos internos e
+                explorar novas oportunidades de mercado.
               </p>
             </div>
             <hr className="opacity-40" />
@@ -72,9 +74,9 @@ export default function Home() {
                 </h3>
               </div>
               <p className="text-lg max-w-2xl text-gray">
-                a We have vast experience developing SaaS products from scratch
-                and improving existing solutions. Our intuitive and tailored
-                designs convert and keep your users engaged.
+                Criamos websites personalizados e soluções SaaS que permitem às
+                empresas expandir sua presença digital e oferecer serviços
+                inovadores online.
               </p>
             </div>
             <hr className=" opacity-40" />
@@ -110,9 +112,9 @@ export default function Home() {
                 </h3>
               </div>
               <p className="text-lg max-w-2xl text-gray">
-                a We have vast experience developing SaaS products from scratch
-                and improving existing solutions. Our intuitive and tailored
-                designs convert and keep your users engaged.
+                Oferecemos desenvolvimento de sistemas personalizados, criados
+                sob medida para resolver desafios específicos e otimizar o
+                funcionamento do seu negócio.
               </p>
             </div>
             <hr className="opacity-40" />
@@ -134,119 +136,202 @@ export default function Home() {
           </article>
         </section>
 
+        {/* ANCHOR - Testimonials */}
+        <section
+          id="testimonials"
+          className="flex flex-col gap-14 py-16 px-12 bg-black w-full h-[100vh]"
+        >
+          <h2 className="text-3xl font-extrabold">NOSSOS CLIENTES</h2>
+
+          <article className="flex flex-row w-full gap-28 align-middle justify-center">
+            <Image
+              className="rounded-lg shadow-graylight"
+              src={'/assets/vitto.png'}
+              alt={''}
+              width={402}
+              height={402}
+            />
+
+            <Image
+              className="rounded-lg shadow-graylight"
+              src={'/assets/senai.png'}
+              alt={''}
+              width={402}
+              height={402}
+            />
+
+            <Image
+              className="rounded-lg shadow-graylight"
+              src={'/assets/senai.png'}
+              alt={''}
+              width={402}
+              height={402}
+            />
+          </article>
+        </section>
+
         <section className="flex flex-col gap-14 w-full py-16">
           <h2 className="text-3xl font-extrabold text-graydark">FAQS</h2>
+
+          <ul role="list" className="divide-y divide-gray-100">
+            <li className="flex justify-center gap-x-6 py-5">
+              <div className="flex min-w-0 gap-x-4">
+                <div className="min-w-0 flex-auto">
+                  <p className="text-lg font-semibold leading-6">
+                    Leslie Alexander
+                  </p>
+                  <p className="mt-1 truncate text-xs leading-5">
+                    leslie.alexander@example.com
+                  </p>
+                </div>
+              </div>
+              <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                <p className="text-sm leading-6 text-gray-900">
+                  Co-Founder / CEO
+                </p>
+                <p className="mt-1 text-xs leading-5 text-gray-500">
+                  Last seen <time dateTime="2023-01-23T13:23Z">3h ago</time>
+                </p>
+              </div>
+            </li>
+
+            <li className="flex justify-center gap-x-6 py-5">
+              <div className="flex min-w-0 gap-x-4">
+                <div className="min-w-0 flex-auto">
+                  <p className="text-lg font-semibold leading-6">
+                    Michael Foster
+                  </p>
+                  <p className="mt-1 truncate text-xs leading-5">
+                    michael.foster@example.com
+                  </p>
+                </div>
+              </div>
+              <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                <p className="text-sm leading-6 text-gray-900">
+                  Co-Founder / CTO
+                </p>
+                <p className="mt-1 text-xs leading-5 text-gray-500">
+                  Last seen <time dateTime="2023-01-23T13:23Z">3h ago</time>
+                </p>
+              </div>
+            </li>
+          </ul>
         </section>
       </main>
 
+      <Footer />
+    </div>
+  )
+}
+
+function Footer() {
+  return (
+    <footer className="flex flex-col items-center gap-32 w-full py-12 bg-black text-white text-center justify-center">
       {/* LINK - https://www.octaveagency.com/ */}
       {/* LINK - https://www.jamm.co/#pricing */}
-      <footer className="flex flex-col items-center gap-28 w-full py-12 bg-black text-white text-center justify-center">
-        {/* TODO - Add cool animation here */}
-        <article className="flex flex-col w-full gap-12">
-          <h1 className="text-8xl font-bold text-redlight">
-            Vamos construir algo juntos?
-          </h1>
-          <p className="text-graylight text-2xl">
-            Hire a team of top level professionals for less money than hiring a
-            single designer. Stupid simple design
-            <br /> subscription service to level-up your business!
-          </p>
+      {/* TODO - Add cool animation here */}
+      <article className="flex flex-col w-full gap-12">
+        <h1 className="text-8xl font-bold text-redlight">
+          Vamos construir algo juntos?
+        </h1>
+        <p className="text-graylight text-2xl">
+          Contrate uma equipe de especialistas oferecendo soluções completas de
+          software <br /> para impulsionar seu negócio com agilidade e
+          eficiência.
+        </p>
 
-          <div className="flex flex-row gap-8 align-middle justify-center">
-            <button
-              className="w-[16vw] h-[5.5vh] rounded-lg bg-redlight border-graylight hover:ease-in transition-all duration-100 ease-in-out hover:bg-graylight hover:border hover:border-graylight hover:text-redlight"
-              onClick={() => {}}
-            >
-              Marque uma call
-            </button>
-            <button
-              className="w-[16vw] h-[5.5vh] rounded-lg  border-redlight border hover:text-redlight transition-all duration-150"
-              onClick={() => {}}
-            >
-              Nos mande um email
-            </button>
-          </div>
+        <div className="flex flex-row gap-8 align-middle justify-center">
+          <button
+            className="w-[16vw] h-[5.5vh] shadow-lg rounded-lg shadow-reddark bg-redlight border-graylight hover:ease-in transition-all duration-100 ease-in-out hover:bg-graylight hover:border hover:border-graylight hover:text-redlight"
+            onClick={() => {}}
+          >
+            Marque uma call
+          </button>
+          <button
+            className="w-[16vw] h-[5.5vh] shadow-lg shadow-reddark rounded-lg  border-redlight  border hover:text-redlight transition-all duration-150"
+            onClick={() => {}}
+          >
+            Nos mande um email
+          </button>
+        </div>
 
-          <div></div>
-
-          {/* REVIEW - Check if looks good */}
-          {/* <div className="w-full justify-center text-center">
+        {/* REVIEW - Check if looks good */}
+        {/* <div className="w-full justify-center text-center">
             <button className="text-graylight bg-blue w-[18vw] h-[8vh] rounded-xl">
               Veja nossos trabalhos aqui
             </button>
           </div> */}
-        </article>
+      </article>
 
-        <article className="flex flex-row gap-20 text-start">
-          <div className="flex flex-col gap-4">
-            <h2 className="text-graylight font-bold text-2xl">Vigel</h2>
-            <span>Creative people</span>
-            <span>From Brasil</span>
-            <span>Tel: +XX (XX) XXXXX-XXXX</span>
+      <article className="flex flex-row gap-36 text-start">
+        <div className="flex flex-col gap-4">
+          <h2 className="text-graylight font-bold text-2xl">Vigel</h2>
+          <span>From Brasil</span>
+          <span className="text-base">Tel 1: +55 (31) 9 7300-8566</span>
+          <span className="text-base">Tel 2: +55 (31) 9 8865-4602</span>
+          <span className="text-base">
+            Email:{' '}
+            <a href="mailto:vigelcontato@gmail.com">vigelcontato@gmail.com</a>
+          </span>
 
-            {/* Social medias */}
-            <div className="flex flex-row gap-6">
-              <a href="">
-                <span>Icon here</span>
-              </a>
-              <a href="">
-                <span>Icon here</span>
-              </a>
-              <a href="">
-                <span>Icon here</span>
-              </a>
-            </div>
+          {/* TODO -  Social medias */}
+          <div className="flex flex-row gap-6">
+            <a href="">
+              <span>Icon here</span>
+            </a>
+            <a href="">
+              <span>Icon here</span>
+            </a>
+            <a href="">
+              <span>Icon here</span>
+            </a>
           </div>
+        </div>
 
-          <div className="flex flex-col gap-4">
-            <h2 className="font-bold text-2xl">Links</h2>
-            <a href="#">Nossos serviços</a>
-            <a href="#">Sobre nós</a>
-            <a href="#">Nossos trabalhos</a>
-            <a href="#">Contato</a>
-          </div>
+        <div className="flex flex-col gap-4">
+          <h2 className="font-bold text-2xl">Links</h2>
+          <a href="#">Nossos serviços</a>
+          <a href="#">Sobre nós</a>
+          <a href="#">Nossos trabalhos</a>
+          <a href="#">Contato</a>
+        </div>
 
-          <div className="flex flex-col gap-4">
-            <h2 className="text-2xl font-bold">Serviços</h2>
-            <a href="#">Desenvolvimeto de aplicativos móveis</a>
-            <a href="#">Desenvolvimento de aplicações SAAS</a>
-            <a href="#">Desenvolvimento de APIs e servidores</a>
-          </div>
+        <div className="flex flex-col gap-4">
+          <h2 className="text-2xl font-bold">Serviços</h2>
+          <a href="#">Desenvolvimeto de aplicativos móveis</a>
+          <a href="#">Desenvolvimento de aplicações SAAS</a>
+          <a href="#">Desenvolvimento de APIs e servidores</a>
+        </div>
 
-          <div className="flex flex-col gap-4">
-            <h2 className="text-2xl font-bold">Contato</h2>
+        <div className="flex flex-col gap-4">
+          <h2 className="text-2xl font-bold">Contato</h2>
+          <span>
+            <b>Email:</b>{' '}
+            <a href="mailto:vigelcontato@gmail.com">vigelcontato@gmail.com</a>
+          </span>
+          <span>
+            <b>Tel:</b> <a href="#">+55 (31) 9 8865-4602</a>
+          </span>
+
+          <div className="">
             <span>
-              <b>Email:</b> <a href="#">email@exemplo.com</a>
+              <b>Address</b>{' '}
             </span>
-            <span>
-              Tel: <a href="#">Desenvolvimento de aplicações SAAS</a>
-            </span>
-
-            <span>Address </span>
 
             <h4>Horas de funcionamento:</h4>
             <span>Segunda - Sexta: 9:00 até 5pm</span>
           </div>
-
-          <div className="flex flex-col gap-4">
-            <h2 className="text-2xl font-bold">Serviços</h2>
-            <a href="#">Nossos serviços</a>
-            <a href="#">Sobre nós</a>
-            <a href="#">Nossos trabalhos</a>
-            <a href="#">Contato</a>
-          </div>
-        </article>
-
-        <hr />
-
-        <div>
-          <p>
-            <a href="#">Termos de condições</a>
-          </p>
-          <p>© 2024 Vigel </p>
         </div>
-      </footer>
-    </div>
+      </article>
+
+      <hr />
+
+      <div>
+        <p>
+          <a href="#">Termos de condições</a>
+        </p>
+        <p>© 2024 Vigel </p>
+      </div>
+    </footer>
   )
 }
