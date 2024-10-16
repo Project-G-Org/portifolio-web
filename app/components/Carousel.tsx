@@ -6,9 +6,9 @@ interface Slide {
 }
 
 const slides: Slide[] = [
-  { id: 1, imageUrl: 'https://via.placeholder.com/800x400?text=Slide+1' },
-  { id: 2, imageUrl: 'https://via.placeholder.com/800x400?text=Slide+2' },
-  { id: 3, imageUrl: 'https://via.placeholder.com/800x400?text=Slide+3' },
+  { id: 1, imageUrl: './img/slide1.png' },
+  { id: 2, imageUrl: './img/slide2.png' },
+  { id: 3, imageUrl: './img/slide3.png' },
 ]
 
 const Carousel: React.FC = () => {
@@ -26,38 +26,117 @@ const Carousel: React.FC = () => {
     )
   }
 
+  const getPreviousIndex = () =>
+    currentIndex === 0 ? slides.length - 1 : currentIndex - 1
+
+  const getNextIndex = () =>
+    currentIndex === slides.length - 1 ? 0 : currentIndex + 1
+
   return (
     <div className="relative w-full max-w-4xl mx-auto">
-      <div className="overflow-hidden">
+      <div className="overflow-hidden flex justify-center items-center relative">
+        {/* Área clicável à esquerda */}
         <div
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          className="absolute left-0 top-0 h-full w-1/4 cursor-pointer z-20 hidden lg:block"
+          onClick={prevSlide}
+        ></div>
+
+        {/* Imagem à esquerda */}
+        <div
+          className="relative cursor-pointer hidden lg:block"
+          onClick={prevSlide}
+          style={{
+            transform: 'translateX(25%)',
+            zIndex: 5,
+          }}
         >
-          {slides.map((slide) => (
-            <div key={slide.id} className="min-w-full">
-              <image
-                src={slide.imageUrl}
-                alt={`Slide ${slide.id}`}
-                className="w-full h-auto"
-              />
-            </div>
-          ))}
+          <img
+            src={slides[getPreviousIndex()].imageUrl}
+            alt={`Slide ${slides[getPreviousIndex()].id}`}
+            style={{ width: '650px', height: '350px' }}
+            className="opacity-50 blur-sm"
+          />
         </div>
+
+        {/* Imagem Central */}
+        <div className="relative z-10 mx-4">
+          <img
+            src={slides[currentIndex].imageUrl}
+            alt={`Slide ${slides[currentIndex].id}`}
+            style={{ width: '1050px', height: '500px' }} 
+          />
+        </div>
+
+        {/* Imagem à direita */}
+        <div
+          className="relative cursor-pointer hidden lg:block"
+          onClick={nextSlide}
+          style={{
+            transform: 'translateX(-25%)',
+            zIndex: 5,
+          }}
+        >
+          <img
+            src={slides[getNextIndex()].imageUrl}
+            alt={`Slide ${slides[getNextIndex()].id}`}
+            style={{ width: '650px', height: '350px' }}
+            className="opacity-50 blur-sm"
+          />
+        </div>
+
+        {/* Área clicável à direita */}
+        <div
+          className="absolute right-0 top-0 h-full w-1/4 cursor-pointer z-20 hidden lg:block"
+          onClick={nextSlide}
+        ></div>
       </div>
 
-      {/* Controles */}
-      <button
-        onClick={prevSlide}
-        className="absolute top-1/2 left-0 transform -translate-y-1/2 p-2 bg-gray-800 text-white"
-      >
-        &#10094;
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute top-1/2 right-0 transform -translate-y-1/2 p-2 bg-gray-800 text-white"
-      >
-        &#10095;
-      </button>
+      {/* Estilizar a responsividade */}
+      <style jsx>{`
+        @media (max-width: 900px) {
+          .lg\\:block {
+            display: none; /* Esconder as imagens laterais em telas pequenas */
+          }
+
+          img {
+            width: 100%; /* Ajustar a imagem central para ocupar toda a largura */
+            height: auto;
+          }
+
+          .relative {
+            position: relative;
+            cursor: pointer; /* Área central também clicável em telas pequenas */
+          }
+
+          .relative::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            z-index: 10;
+          }
+
+          .relative::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            z-index: 10;
+          }
+
+          .relative::before {
+            cursor: pointer;
+          }
+
+          .relative::after {
+            cursor: pointer;
+          }
+        }
+      `}</style>
     </div>
   )
 }

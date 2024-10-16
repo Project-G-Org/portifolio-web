@@ -57,12 +57,7 @@ export default function Home() {
             </h1>
 
             <div className="min-h-screen flex flex-col items-center justify-center">
-              <main className="w-full flex flex-col items-center justify-center">
-                <h1 className="text-4xl font-bold mb-8">
-                  Carrossel com Next.js e Tailwind
-                </h1>
-                <Carousel />
-              </main>
+              <Carousel />
             </div>
           </div>
           <svg
@@ -164,6 +159,10 @@ export default function Home() {
             </div>
             <hr className="opacity-40" />
           </article>
+        </section>
+
+        <section className="flex flex-col items-center gap-28 mx-[-50px] w-full h-[800px] py-10 bg-black text-white text-center justify-center">
+          {/* Conteúdo da section */}
         </section>
 
         <section className="flex flex-col gap-14 w-full py-16">
