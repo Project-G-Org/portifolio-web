@@ -47,7 +47,9 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="flex flex-col min-h-screen bg-graylight font-sans">
+    <div className="flex flex-col min-h-screen bg-graylight font-serif">
+      {' '}
+      {/* Alterado de font-sans para font-serif */}
       <main className="flex flex-col">
         <header className="w-full py-6 bg-opacity-0 text-white text-center flex gap-20">
           <SmileyIcon />
@@ -236,211 +238,88 @@ export default function Home() {
               />
               <Image
                 className="rounded-lg shadow-graylight"
-                src={'/assets/senai.png'}
+                src={'/assets/hivemind.png'}
                 alt={''}
                 width={402}
                 height={402}
               />
             </article>
-
-            <div className="flex justify-center mt-30">
-              <h2 className="text-6xl font-extrabold">SEJA VOCÊ MAIS UM</h2>
-            </div>
           </section>
         </section>
 
+        {/* ANCHOR - FAQs */}
         <section
-          className="flex flex-col gap-14 w-full py-16 mt-16"
+          id="faqs"
+          className="flex flex-col gap-14 w-full py-16 section-hidden"
           ref={faqsRef}
         >
-          <h2 className="text-3xl font-extrabold text-gray-800">FAQS</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Card 1 */}
-            <div className="bg-white shadow-md rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900">
-                What is your return policy?
-              </h3>
-              <p className="text-gray-600">
-                You can return any item within 30 days of purchase. Simply
-                contact our support team to start the process.
-              </p>
-            </div>
+          <h2 className="text-3xl font-extrabold text-graydark">
+            DÚVIDAS FREQUENTES
+          </h2>
 
-            {/* Card 2 */}
-            <div className="bg-white shadow-md rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900">
-                How can I track my order?
+          <div className="flex flex-col gap-5">
+            <div className="flex flex-row justify-between w-full">
+              <h3 className="text-lg font-bold text-reddark">
+                Como faço para entrar em contato?
               </h3>
-              <p className="text-gray-600">
-                After your order is shipped, we will send you an email with a
-                tracking number. You can also check your order status in your
-                account.
-              </p>
+              <span className="material-symbols-outlined">add</span>
             </div>
+            <p className="text-gray">
+              Você pode entrar em contato conosco através do e-mail
+              contato@mydomain.com ou pelas nossas redes sociais.
+            </p>
+            <hr className="opacity-40" />
+          </div>
 
-            {/* Card 3 */}
-            <div className="bg-white shadow-md rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900">
-                Do you offer international shipping?
+          <div className="flex flex-col gap-5">
+            <div className="flex flex-row justify-between w-full">
+              <h3 className="text-lg font-bold text-reddark">
+                Quais serviços vocês oferecem?
               </h3>
-              <p className="text-gray-600">
-                Yes, we ship internationally. Shipping times and costs vary
-                based on your location.
-              </p>
+              <span className="material-symbols-outlined">add</span>
             </div>
+            <p className="text-gray">
+              Oferecemos desenvolvimento de aplicativos, websites, sistemas e
+              soluções personalizadas.
+            </p>
+            <hr className="opacity-40" />
+          </div>
 
-            {/* Card 4 */}
-            <div className="bg-white shadow-md rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900">
-                Can I change my order after it has been placed?
+          <div className="flex flex-col gap-5">
+            <div className="flex flex-row justify-between w-full">
+              <h3 className="text-lg font-bold text-reddark">
+                Como é o processo de desenvolvimento?
               </h3>
-              <p className="text-gray-600">
-                Unfortunately, once an order has been placed, it cannot be
-                modified. Please double-check your order details before
-                completing the purchase.
-              </p>
+              <span className="material-symbols-outlined">add</span>
             </div>
+            <p className="text-gray">
+              O processo envolve a coleta de requisitos, design,
+              desenvolvimento, testes e lançamento.
+            </p>
+            <hr className="opacity-40" />
+          </div>
 
-            {/* Card 5 */}
-            <div className="bg-white shadow-md rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900">
-                What payment methods do you accept?
+          <div className="flex flex-col gap-5">
+            <div className="flex flex-row justify-between w-full">
+              <h3 className="text-lg font-bold text-reddark">
+                Vocês oferecem suporte pós-lançamento?
               </h3>
-              <p className="text-gray-600">
-                We accept Visa, MasterCard, PayPal, and Apple Pay for your
-                convenience.
-              </p>
+              <span className="material-symbols-outlined">add</span>
             </div>
-
-            {/* Card 6 */}
-            <div className="bg-white shadow-md rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900">
-                How do I contact customer service?
-              </h3>
-              <p className="text-gray-600">
-                You can reach our customer service team via email at
-                support@example.com or call us at (123) 456-7890.
-              </p>
-            </div>
+            <p className="text-gray">
+              Sim, oferecemos suporte contínuo e manutenção após o lançamento.
+            </p>
+            <hr className="opacity-40" />
           </div>
         </section>
+
+        {/* ANCHOR - Footer */}
+        <footer className="flex flex-col py-6 text-center" ref={footerRef}>
+          <h2 className="text-graydark text-3xl font-extrabold">CONTATO</h2>
+          <p className="text-gray">Entre em contato conosco:</p>
+          <p className="text-gray">contato@mydomain.com</p>
+        </footer>
       </main>
-
-      <div className="section-hidden w-full" ref={footerRef}>
-        <Footer />
-      </div>
     </div>
-  )
-}
-
-function Footer() {
-  return (
-    <footer id="contact" className="flex flex-col items-center gap-32 w-full py-12 bg-black text-white text-center justify-center">
-      {/* LINK - https://www.octaveagency.com/ */}
-      {/* LINK - https://www.jamm.co/#pricing */}
-      {/* TODO - Add cool animation here */}
-      <article className="flex flex-col w-full gap-12">
-        <h1 className="text-8xl font-bold text-redlight">
-          Vamos construir algo juntos?
-        </h1>
-        <p className="text-graylight text-2xl">
-          Contrate uma equipe de especialistas oferecendo soluções completas de
-          software <br /> para impulsionar seu negócio com agilidade e
-          eficiência.
-        </p>
-
-        <div className="flex flex-row gap-8 align-middle justify-center">
-          <button
-            className="w-[16vw] h-[5.5vh] shadow-lg rounded-lg shadow-reddark bg-redlight border-graylight hover:ease-in transition-all duration-100 ease-in-out hover:bg-graylight hover:border hover:border-graylight hover:text-redlight"
-            onClick={() => {}}
-          >
-            Marque uma call
-          </button>
-          <button
-            className="w-[16vw] h-[5.5vh] shadow-lg shadow-reddark rounded-lg  border-redlight  border hover:text-redlight transition-all duration-150"
-            onClick={() => {}}
-          >
-            Nos mande um email
-          </button>
-        </div>
-
-        {/* REVIEW - Check if looks good */}
-        {/* <div className="w-full justify-center text-center">
-            <button className="text-graylight bg-blue w-[18vw] h-[8vh] rounded-xl">
-              Veja nossos trabalhos aqui
-            </button>
-          </div> */}
-      </article>
-
-      <article className="flex flex-row gap-36 text-start">
-        <div className="flex flex-col gap-4">
-          <h2 className="text-graylight font-bold text-2xl">Vigel</h2>
-          <span>From Brasil</span>
-          <span className="text-base">Tel 1: +55 (31) 9 7300-8566</span>
-          <span className="text-base">Tel 2: +55 (31) 9 8865-4602</span>
-          <span className="text-base">
-            Email:{' '}
-            <a href="mailto:vigelcontato@gmail.com">vigelcontato@gmail.com</a>
-          </span>
-
-          {/* TODO -  Social medias */}
-          <div className="flex flex-row gap-6">
-            <a href="">
-              <span>Icon here</span>
-            </a>
-            <a href="">
-              <span>Icon here</span>
-            </a>
-            <a href="">
-              <span>Icon here</span>
-            </a>
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-4">
-          <h2 className="font-bold text-2xl">Links</h2>
-          <a href="#">Nossos serviços</a>
-          <a href="#">Sobre nós</a>
-          <a href="#">Nossos trabalhos</a>
-          <a href="#">Contato</a>
-        </div>
-
-        <div className="flex flex-col gap-4">
-          <h2 className="text-2xl font-bold">Serviços</h2>
-          <a href="#">Desenvolvimeto de aplicativos móveis</a>
-          <a href="#">Desenvolvimento de aplicações SAAS</a>
-          <a href="#">Desenvolvimento de APIs e servidores</a>
-        </div>
-
-        <div className="flex flex-col gap-4">
-          <h2 className="text-2xl font-bold">Contato</h2>
-          <span>
-            <b>Email:</b>{' '}
-            <a href="mailto:vigelcontato@gmail.com">vigelcontato@gmail.com</a>
-          </span>
-          <span>
-            <b>Tel:</b> <a href="#">+55 (31) 9 8865-4602</a>
-          </span>
-
-          <div className="">
-            <span>
-              <b>Address</b>{' '}
-            </span>
-
-            <h4>Horas de funcionamento:</h4>
-            <span>Segunda - Sexta: 9:00 até 5pm</span>
-          </div>
-        </div>
-      </article>
-
-      <hr />
-
-      <div>
-        <p>
-          <a href="#">Termos de condições</a>
-        </p>
-        <p>© 2024 Vigel </p>
-      </div>
-    </footer>
   )
 }

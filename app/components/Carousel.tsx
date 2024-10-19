@@ -8,8 +8,8 @@ interface Slide {
 }
 
 const slides: Slide[] = [
-  { id: 1, imageUrl: '/img/slide1.png', text: 'Harpya' },
-  { id: 2, imageUrl: '/img/slide2.png', text: 'Builder Buddy' },
+  { id: 1, imageUrl: '/img/slide1.png', text: 'Builder Buddy' },
+  { id: 2, imageUrl: '/img/slide2.png', text: 'Harpya' },
   { id: 3, imageUrl: '/img/slide3.png', text: 'Vittoree' },
 ]
 
@@ -85,7 +85,7 @@ const Carousel: React.FC = () => {
             className="w-full h-auto"
           />
 
-          <div className="absolute bottom-4 text-white text-xl font-bold bg-black bg-opacity-50 p-2 rounded">
+          <div className="absolute bottom-4 text-white text-xl font-bold bg-transparent p-2 rounded text-reddark">
             {slides[currentIndex].text}
           </div>
         </div>
