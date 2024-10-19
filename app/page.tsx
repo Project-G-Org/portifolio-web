@@ -5,6 +5,7 @@ import './style.css'
 import Carousel from './components/Carousel'
 import SmileyIcon from './components/SmileyIcons'
 import { useEffect, useRef } from 'react'
+import CarouselController from './components/CarouselController'
 
 export default function Home() {
   const servicesRef = useRef(null)
@@ -83,7 +84,7 @@ export default function Home() {
             </h1>
 
             <div className="min-h-40 min-w-max flex flex-col items-center justify-center">
-              <Carousel />
+              <CarouselController />
             </div>
           </div>
 
@@ -350,13 +351,13 @@ function Footer() {
         <div className="flex flex-row gap-8 align-middle justify-center">
           <button
             className="w-[16vw] h-[5.5vh] shadow-lg rounded-lg shadow-reddark bg-redlight border-graylight hover:ease-in transition-all duration-100 ease-in-out hover:bg-graylight hover:border hover:border-graylight hover:text-redlight"
-            onClick={() => {}}
+            onClick={() => { }}
           >
             Marque uma call
           </button>
           <button
             className="w-[16vw] h-[5.5vh] shadow-lg shadow-reddark rounded-lg  border-redlight  border hover:text-redlight transition-all duration-150"
-            onClick={() => {}}
+            onClick={() => { }}
           >
             Nos mande um email
           </button>

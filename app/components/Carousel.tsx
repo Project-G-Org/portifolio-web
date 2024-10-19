@@ -9,7 +9,7 @@ interface Slide {
 
 const slides: Slide[] = [
   { id: 1, imageUrl: '/assets/harpya.png', text: 'Harpya' },
-  { id: 2, imageUrl: '/img/slide2.png', text: 'Builder Buddy' },
+  { id: 2, imageUrl: '/img/slide1.png', text: 'Builder Buddy' },
   { id: 3, imageUrl: '/img/slide3.png', text: 'Vittoree' },
 ]
 
