@@ -184,25 +184,42 @@ export default function Home() {
             SOBRE A EQUIPE
           </h2>
 
-          <article className="flex flex-col w-full gap-5">
-            <div className="flex flex-col w-[527px] justify-end h-[523px] rounded-lg bg-placeholder p-3 pb-4 pl-4">
-              <h3 className="text-blue text-3xl font-bold">Lorem Ipsum</h3>
+          <div className="flex flex-col md:flex-row gap-5 justify-center items-center">
+            <article className="flex flex-col w-full md:w-[527px] justify-end h-[523px] rounded-lg bg-placeholder p-3 pb-4 pl-4">
+              <h3 className="text-blue text-3xl font-bold">Lucas Vinicios</h3>
               <p className="text-lg text-graydark">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </p>
-            </div>
-          </article>
+            </article>
+
+            <article className="flex flex-col w-full md:w-[527px] justify-end h-[523px] rounded-lg bg-placeholder p-3 pb-4 pl-4">
+              <h3 className="text-blue text-3xl font-bold">Victor Luiz</h3>
+              <p className="text-lg text-graydark">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              </p>
+            </article>
+
+            <article className="flex flex-col w-full md:w-[527px] justify-end h-[523px] rounded-lg bg-placeholder p-3 pb-4 pl-4">
+              <h3 className="text-blue text-3xl font-bold">Gabriel Spinola</h3>
+              <p className="text-lg text-graydark">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              </p>
+            </article>
+          </div>
         </section>
 
         {/* ANCHOR - Testimonials */}
-        <section id="testimonials" className=" bg-black v-[100vw] h-[102vh]">
+        <section id="testimonials" className="bg-black v-[100vw] h-[102vh]">
           <section
             className="flex flex-col gap-14 py-16 px-12 section-hidden"
             ref={testimonialsRef}
           >
-            <h2 className="text-3xl font-extrabold">NOSSOS CLIENTES</h2>
+            <div className="flex space-x-4">
+              <h2 className="text-4xl font-extrabold">NOSSOS</h2>
+              <h2 className="text-4xl font-extrabold text-reddark">CLIENTES</h2>
+            </div>
 
-            <article className="flex flex-row w-full gap-28 align-middle justify-center">
+            <article className="flex flex-col md:flex-row w-full gap-8 md:gap-18 align-middle justify-center">
               <Image
                 className="rounded-lg shadow-graylight"
                 src={'/assets/vitto.png'}
@@ -210,15 +227,13 @@ export default function Home() {
                 width={402}
                 height={402}
               />
-
               <Image
                 className="rounded-lg shadow-graylight"
-                src={'/assets/senai.png'}
+                src={'/assets/harpya2.png'}
                 alt={''}
                 width={402}
                 height={402}
               />
-
               <Image
                 className="rounded-lg shadow-graylight"
                 src={'/assets/senai.png'}
@@ -227,58 +242,85 @@ export default function Home() {
                 height={402}
               />
             </article>
+
+            <div className="flex justify-center mt-30">
+              <h2 className="text-6xl font-extrabold">SEJA VOCÊ MAIS UM</h2>
+            </div>
           </section>
         </section>
 
-        <section
-          className="flex flex-col gap-14 w-full py-16 section-hidden"
-          ref={faqsRef}
-        >
-          <h2 className="text-3xl font-extrabold text-graydark">FAQS</h2>
+        <section className="flex flex-col gap-14 w-full py-16" ref={faqsRef}>
+          <h2 className="text-3xl font-extrabold text-gray-800">FAQS</h2>
 
-          <ul role="list" className="divide-y divide-gray-100">
-            <li className="flex justify-center gap-x-6 py-5">
-              <div className="flex min-w-0 gap-x-4">
-                <div className="min-w-0 flex-auto">
-                  <p className="text-lg font-semibold leading-6">
-                    Leslie Alexander
-                  </p>
-                  <p className="mt-1 truncate text-xs leading-5">
-                    leslie.alexander@example.com
-                  </p>
-                </div>
-              </div>
-              <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                <p className="text-sm leading-6 text-gray-900">
-                  Co-Founder / CEO
-                </p>
-                <p className="mt-1 text-xs leading-5 text-gray-500">
-                  Last seen <time dateTime="2023-01-23T13:23Z">3h ago</time>
-                </p>
-              </div>
-            </li>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <div className="bg-white shadow-md rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">
+                What is your return policy?
+              </h3>
+              <p className="text-gray-600">
+                You can return any item within 30 days of purchase. Simply
+                contact our support team to start the process.
+              </p>
+            </div>
 
-            <li className="flex justify-center gap-x-6 py-5">
-              <div className="flex min-w-0 gap-x-4">
-                <div className="min-w-0 flex-auto">
-                  <p className="text-lg font-semibold leading-6">
-                    Michael Foster
-                  </p>
-                  <p className="mt-1 truncate text-xs leading-5">
-                    michael.foster@example.com
-                  </p>
-                </div>
-              </div>
-              <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                <p className="text-sm leading-6 text-gray-900">
-                  Co-Founder / CTO
-                </p>
-                <p className="mt-1 text-xs leading-5 text-gray-500">
-                  Last seen <time dateTime="2023-01-23T13:23Z">3h ago</time>
-                </p>
-              </div>
-            </li>
-          </ul>
+            {/* Card 2 */}
+            <div className="bg-white shadow-md rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">
+                How can I track my order?
+              </h3>
+              <p className="text-gray-600">
+                After your order is shipped, we will send you an email with a
+                tracking number. You can also check your order status in your
+                account.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white shadow-md rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">
+                Do you offer international shipping?
+              </h3>
+              <p className="text-gray-600">
+                Yes, we ship internationally. Shipping times and costs vary
+                based on your location.
+              </p>
+            </div>
+
+            {/* Card 4 */}
+            <div className="bg-white shadow-md rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">
+                Can I change my order after it has been placed?
+              </h3>
+              <p className="text-gray-600">
+                Unfortunately, once an order has been placed, it cannot be
+                modified. Please double-check your order details before
+                completing the purchase.
+              </p>
+            </div>
+
+            {/* Card 5 */}
+            <div className="bg-white shadow-md rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">
+                What payment methods do you accept?
+              </h3>
+              <p className="text-gray-600">
+                We accept Visa, MasterCard, PayPal, and Apple Pay for your
+                convenience.
+              </p>
+            </div>
+
+            {/* Card 6 */}
+            <div className="bg-white shadow-md rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">
+                How do I contact customer service?
+              </h3>
+              <p className="text-gray-600">
+                You can reach our customer service team via email at
+                support@example.com or call us at (123) 456-7890.
+              </p>
+            </div>
+          </div>
         </section>
       </main>
 

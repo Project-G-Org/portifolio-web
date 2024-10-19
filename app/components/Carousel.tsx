@@ -4,12 +4,13 @@ import Image from 'next/image'
 interface Slide {
   id: number
   imageUrl: string
+  text: string
 }
 
 const slides: Slide[] = [
-  { id: 1, imageUrl: '/img/slide1.png' },
-  { id: 2, imageUrl: '/img/slide2.png' },
-  { id: 3, imageUrl: '/img/slide3.png' },
+  { id: 1, imageUrl: '/assets/harpya.png', text: 'Harpya' },
+  { id: 2, imageUrl: '/img/slide2.png', text: 'Builder Buddy' },
+  { id: 3, imageUrl: '/img/slide3.png', text: 'Vittoree' },
 ]
 
 const imageDistancePercent = 10
@@ -60,25 +61,33 @@ const Carousel: React.FC = () => {
           <Image
             src={slides[getPreviousIndex()].imageUrl}
             alt={`Slide ${slides[getPreviousIndex()].id}`}
-            fill // Make the image fill its container
-            style={{ objectFit: 'cover' }} // Ensure consistent sizing
+            fill
+            style={{ objectFit: 'cover' }}
             className="opacity-50 blur-sm"
           />
         </div>
 
-        {/* Imagem Central */}
+        {/* Imagem Central com Texto */}
         <div
-          className="relative z-10 mx-4"
+          className="relative z-10 mx-4 flex flex-col justify-center items-center cursor-pointer"
+          onClick={nextSlide}
           style={{
-            width: `${focusedImageSize.width}px`,
+            width: '100%',
+            maxWidth: `${focusedImageSize.width}px`,
             height: `${focusedImageSize.height}px`,
           }}
         >
           <Image
             src={slides[currentIndex].imageUrl}
             alt={`Slide ${slides[currentIndex].id}`}
-            fill // Make the image fill its container
+            fill
+            style={{ objectFit: 'cover' }}
+            className="w-full h-auto"
           />
+
+          <div className="absolute bottom-4 text-white text-xl font-bold bg-black bg-opacity-50 p-2 rounded">
+            {slides[currentIndex].text}
+          </div>
         </div>
 
         {/* Imagem à direita */}
@@ -95,8 +104,8 @@ const Carousel: React.FC = () => {
           <Image
             src={slides[getNextIndex()].imageUrl}
             alt={`Slide ${slides[getNextIndex()].id}`}
-            fill // Make the image fill its container
-            style={{ objectFit: 'cover' }} // Ensure consistent sizing
+            fill
+            style={{ objectFit: 'cover' }}
             className="opacity-50 blur-sm"
           />
         </div>
@@ -110,47 +119,24 @@ const Carousel: React.FC = () => {
 
       {/* Estilizar a responsividade */}
       <style jsx>{`
-        @media (max-width: 900px) {
+        @media (max-width: 1200px) {
           .lg\\:block {
             display: none; /* Esconder as imagens laterais em telas pequenas */
           }
 
-          img {
+          .carousel-container {
+            position: relative;
+            width: 100%;
+          }
+
+          .carousel-container img {
             width: 100%; /* Ajustar a imagem central para ocupar toda a largura */
             height: auto;
           }
 
           .relative {
-            position: relative;
-            cursor: pointer; /* Área central também clicável em telas pequenas */
-          }
-
-          .relative::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 50%;
-            height: 100%;
-            z-index: 10;
-          }
-
-          .relative::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            z-index: 10;
-          }
-
-          .relative::before {
-            cursor: pointer;
-          }
-
-          .relative::after {
-            cursor: pointer;
+            cursor: pointer; /* Tornar a área central clicável */
+            width: 100%;
           }
         }
       `}</style>
