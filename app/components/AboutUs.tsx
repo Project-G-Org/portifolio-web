@@ -15,10 +15,10 @@ export default function AboutUs() {
           </span>{' '}
           e <span className={styles.textSpan}>desktop</span>, criação de{' '}
           <span className={styles.textSpan}>sites</span> e{' '}
-          <span className={styles.textSpan}>sistemas</span>, além de
-          oferecer <span className={styles.textSpan}>serviços de design</span>. Asseguramos que cada projeto reflita a
-          individualidade de quem o solicita, com performance otimizada para
-          suas necessidades.
+          <span className={styles.textSpan}>sistemas</span>, além de oferecer{' '}
+          <span className={styles.textSpan}>serviços de design</span>.
+          Asseguramos que cada projeto reflita a individualidade de quem o
+          solicita, com performance otimizada para suas necessidades.
         </p>
       </section>
     </section>
