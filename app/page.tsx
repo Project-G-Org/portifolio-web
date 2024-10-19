@@ -55,23 +55,22 @@ export default function Home() {
           <div className="w-full py-6 bg-opacity-0 text-white text-center flex gap-16 flex-col">
             <nav className="flex justify-center gap-6">
               <a
-                href="#"
+                href="#services"
                 className="text-reddark font-bold no-underline text-2xl mr-28"
               >
                 produtos
               </a>
               <a
-                href="#"
+                href="#about"
                 className="text-reddark font-bold no-underline text-2xl mr-28"
               >
                 sobre
               </a>
-
               <a
-                href="#"
+                href="#contact"
                 className="text-reddark font-bold no-underline text-2xl"
               >
-                contatato
+                contato
               </a>
             </nav>
 
@@ -92,6 +91,7 @@ export default function Home() {
 
         {/* ANCHOR - Services */}
         <section
+          id="services"
           ref={servicesRef}
           className="flex flex-col gap-14 w-full py-16 section-hidden"
         >
@@ -177,6 +177,7 @@ export default function Home() {
         </section>
 
         <section
+          id="about"
           className="flex flex-col gap-14 w-full py-16 section-hidden"
           ref={teamRef}
         >
@@ -207,9 +208,8 @@ export default function Home() {
             </article>
           </div>
         </section>
-
         {/* ANCHOR - Testimonials */}
-        <section id="testimonials" className="bg-black v-[100vw] h-[102vh]">
+        <section id="testimonials" className="bg-black v-[100vw] h-auto">
           <section
             className="flex flex-col gap-14 py-16 px-12 section-hidden"
             ref={testimonialsRef}
@@ -249,9 +249,11 @@ export default function Home() {
           </section>
         </section>
 
-        <section className="flex flex-col gap-14 w-full py-16" ref={faqsRef}>
+        <section
+          className="flex flex-col gap-14 w-full py-16 mt-16"
+          ref={faqsRef}
+        >
           <h2 className="text-3xl font-extrabold text-gray-800">FAQS</h2>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Card 1 */}
             <div className="bg-white shadow-md rounded-lg p-6">
@@ -333,7 +335,10 @@ export default function Home() {
 
 function Footer() {
   return (
-    <footer className="flex flex-col items-center gap-32 w-full py-12 bg-black text-white text-center justify-center">
+    <footer
+      id="contact"
+      className="flex flex-col items-center gap-32 w-full py-12 bg-black text-white text-center justify-center"
+    >
       {/* LINK - https://www.octaveagency.com/ */}
       {/* LINK - https://www.jamm.co/#pricing */}
       {/* TODO - Add cool animation here */}
