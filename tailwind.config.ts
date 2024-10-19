@@ -14,6 +14,7 @@ const config: Config = {
       xl: '1440px',
     },
     colors: {
+      lightblue: '#8ecaed',
       blue: '#4E93BC',
       redlight: '#DA6666',
       reddark: '#9C4E4E',
@@ -36,6 +37,9 @@ const config: Config = {
       },
       borderRadius: {
         '4xl': '2rem',
+      },
+      backgroundImage: {
+        'office-work': "url('/img/photo-1542744095-fcf48d80b0fd.avif')",
       },
     },
   },

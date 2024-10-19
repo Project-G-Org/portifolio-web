@@ -1,0 +1,35 @@
+.main::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: white;
+  transform: skewY(3deg);
+  z-index: -1;
+}
+
+.main {
+  z-index: 3;
+}
+
+.section1 {
+  z-index: 3;
+
+  .section1Title {
+    z-index: 10;
+    font-family: "Rokkitt", serif;
+    font-weight: 800;
+  }
+
+  h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  li {
+    border-bottom: 1px solid #9C4E4E;
+  }
+}

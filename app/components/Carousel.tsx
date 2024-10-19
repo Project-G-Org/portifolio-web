@@ -24,30 +24,26 @@ export default function Carousel() {
       prevIndex === 0 ? slides.length - 1 : prevIndex - 1,
     )
   }
-
   return (
     <div className="flex flex-col items-center">
-      <div className="relative flex justify-center">
+      <div className="flex justify-center items-center w-full max-w-[800px] h-[590px] relative">
         {slides.map((slide, index) => {
           const isActive = index === activeIndex
-          const isPrevious =
-            index === (activeIndex - 1 + slides.length) % slides.length
-          const isNext = index === (activeIndex + 1) % slides.length
-
-          let positionClass =
-            'absolute transition-all duration-300 h-[590px] w-[590px] rounded-xl overflow-hidden'
-          if (isActive) {
-            positionClass += ' z-10' // A imagem ativa é a maior
-          } else if (isPrevious) {
-            positionClass += ' transform translate-x-[-50%] scale-90' // Imagem anterior, deslocada e menor
-          } else if (isNext) {
-            positionClass += ' transform translate-x-[50%] scale-90' // Imagem seguinte, deslocada e menor
-          } else {
-            positionClass += ' hidden' // Imagens não ativas estão ocultas
-          }
 
           return (
-            <div key={index} className={positionClass}>
+            <div
+              key={index}
+              className={`transition-transform duration-300 ease-in-out flex justify-center items-center h-[590px] w-[590px]
+                ${isActive ? 'scale-100 z-10' : 'scale-90 opacity-50'}
+              `}
+              style={{
+                transform: isActive
+                  ? 'translateX(0)'
+                  : index < activeIndex
+                    ? 'translateX(-50%)'
+                    : 'translateX(50%)',
+              }}
+            >
               <CarouselImage
                 imageUrl={slide.imageUrl}
                 imageAlt={slide.imageAlt}
