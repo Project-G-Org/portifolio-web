@@ -2,9 +2,9 @@
 
 import Image from 'next/image'
 import './style.css'
+import Carousel from './components/Carousel'
 import SmileyIcon from './components/SmileyIcons'
 import { useEffect, useRef } from 'react'
-import CarouselController from './components/CarouselController'
 
 export default function Home() {
   const servicesRef = useRef(null)
@@ -82,7 +82,7 @@ export default function Home() {
             </h1>
 
             <div className="min-h-40 min-w-max flex flex-col items-center justify-center">
-              <CarouselController />
+              <Carousel />
             </div>
           </div>
 
@@ -335,10 +335,7 @@ export default function Home() {
 
 function Footer() {
   return (
-    <footer
-      id="contact"
-      className="flex flex-col items-center gap-32 w-full py-12 bg-black text-white text-center justify-center"
-    >
+    <footer id="contact" className="flex flex-col items-center gap-32 w-full py-12 bg-black text-white text-center justify-center">
       {/* LINK - https://www.octaveagency.com/ */}
       {/* LINK - https://www.jamm.co/#pricing */}
       {/* TODO - Add cool animation here */}
