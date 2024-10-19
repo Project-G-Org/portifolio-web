@@ -14,7 +14,7 @@ export default function Header() {
           className={`flex flex-row gap-24 items-center ${styles.headerContent}`}
         >
           <SmileyIcon />
-          <section className="flex-col gap-24 font-bold font-rokkitt">
+          <section className="flex flex-col gap-24 font-bold font-rokkitt">
             <nav className="flex flex-row gap-32 text-lightblue font-bold w-full justify-center text-2xl">
               <Link href={''}>PRODUTOS</Link>
               <Link href={''}>SOBRE</Link>
