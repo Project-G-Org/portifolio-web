@@ -7,10 +7,12 @@ import Header from './components/Header'
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-graylight font-sans">
+    <>
       <Header />
-      <main>{/* <Carousel /> */}</main>
+      <main className="flex-1">
+        <Carousel />
+      </main>
       <Footer />
-    </div>
+    </>
   )
 }

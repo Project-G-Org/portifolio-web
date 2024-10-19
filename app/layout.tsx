@@ -23,7 +23,11 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={`antialiased`}>{children}</body>
+      <body
+        className={`antialiased flex flex-col min-h-screen bg-graylight font-sans`}
+      >
+        {children}
+      </body>
     </html>
   )
 }
