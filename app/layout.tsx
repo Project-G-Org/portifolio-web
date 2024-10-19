@@ -1,19 +1,8 @@
 import type { Metadata } from 'next'
-// import localFont from 'next/font/local'
 import './globals.css'
 import 'material-symbols'
 
-// const geistSans = localFont({
-//   src: './fonts/GeistVF.woff',
-//   variable: '--font-geist-sans',
-//   weight: '100 900',
-// })
-
-// const geistMono = localFont({
-//   src: './fonts/GeistMonoVF.woff',
-//   variable: '--font-geist-mono',
-//   weight: '100 900',
-// })
+// NOTE - Fonts imports
 
 export const metadata: Metadata = {
   title: 'Vigel | Sua ideia tornando realidade',
@@ -26,7 +15,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scrool-smooth focus:scroll-auto">
+    <html lang="pt-br" className="scrool-smooth focus:scroll-auto">
+      <head>
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className={`antialiased`}>{children}</body>
     </html>
   )

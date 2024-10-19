@@ -5,11 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap');
 @import "material-symbols";
 
-@font-face {
-  font-family: "Rokkit", serif;
-  src: url('https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap');
-}
-
 :root {
   --blue: '#4E93BC';
   --redlight: '#DA6666';
@@ -29,12 +24,9 @@
   }
 }
 
-
-
 body {
   color: var(--graydark);
   background: var(--background);
-  font-family: "Rokkit", serif;
 }
 
 @layer utilities {

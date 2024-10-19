@@ -26,6 +26,8 @@ const config: Config = {
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
+      rokkitt: ['var(--font-rokkitt)', 'serif'], // Fonte Rokkitt
+      poppins: ['var(--font-poppins)', 'sans-serif'], // Fonte Poppins
     },
     extend: {
       spacing: {
