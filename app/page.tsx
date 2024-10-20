@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Services from './components/Services'
 import AboutUs from './components/AboutUs'
+import Portfolio from './components/Portfolio'
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
       <main className={`flex-1 relative pb-16 bg-white w-full ${styles.main}`}>
         <Services />
         <AboutUs />
-        {/* <Carousel /> */}
+        <Portfolio />
       </main>
       <Footer />
     </>
