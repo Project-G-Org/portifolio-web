@@ -1,0 +1,24 @@
+.section1 {
+  z-index: 3;
+
+  .section1Title {
+    z-index: 10;
+    font-family: "Rokkitt", serif;
+    font-weight: 800;
+  }
+
+  h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  li {
+    border-bottom: 1px solid #9C4E4E;
+  }
+
+  button {
+    font-family: "Rokkitt", serif;
+    font-weight: 800;
+  }
+}
