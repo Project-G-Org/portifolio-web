@@ -1,4 +1,4 @@
-.carouselContainer::before {
+.footerContainer::before {
   content: '';
   position: absolute;
   top: -50px;
@@ -10,18 +10,16 @@
   z-index: -1; // Coloca atrás do conteúdo
 }
 
-.carouselContainer {
+.footerContainer {
   position: relative;
-  z-index: 3; // Coloca o conteúdo acima do pseudo-elemento
 
   h1 {
     font-family: "Rokkitt", serif;
     font-weight: 800;
   }
 
-  h2 {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
+  font-family: "Poppins",
+  sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }

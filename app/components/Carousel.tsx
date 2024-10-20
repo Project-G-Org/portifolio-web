@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Image from 'next/image'
+import styles from '@/app/styles/carousel.module.scss'
 
 interface Slide {
   id: number
@@ -63,7 +64,7 @@ export default function Carousel() {
             alt={`Slide ${slides[getPreviousIndex()].id}`}
             fill
             style={{ objectFit: 'cover' }}
-            className="opacity-50 backdrop-blur-sm"
+            className={`opacity-50 backdrop-blur-sm ${styles.image}`}
           />
         </div>
 
