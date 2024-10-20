@@ -10,14 +10,14 @@ interface Slide {
 const slides: Slide[] = [
   { id: 1, imageUrl: '/img/slide1.png', text: 'Builder Buddy' },
   { id: 2, imageUrl: '/img/slide2.png', text: 'VittoTree' },
-  { id: 3, imageUrl: '/img/slide3.png', text: 'Vittoree' },
+  { id: 3, imageUrl: '/img/slide3.png', text: 'Harpya HUD' },
 ]
 
 const imageDistancePercent = 10
 const focusedImageSize = { width: 1050, height: 500 }
 const unfocusedImagesSize = { width: 650, height: 450 }
 
-const Carousel: React.FC = () => {
+export default function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const prevSlide = () => {
@@ -49,7 +49,7 @@ const Carousel: React.FC = () => {
 
         {/* Imagem à esquerda */}
         <div
-          className="relative cursor-pointer hidden lg:block"
+          className="relative cursor-pointer hidden lg:block rounded-xl overflow-hidden"
           onClick={prevSlide}
           style={{
             transform: `translateX(${imageDistancePercent}%)`,
@@ -63,13 +63,13 @@ const Carousel: React.FC = () => {
             alt={`Slide ${slides[getPreviousIndex()].id}`}
             fill
             style={{ objectFit: 'cover' }}
-            className="opacity-50 blur-sm"
+            className="opacity-50 backdrop-blur-sm"
           />
         </div>
 
         {/* Imagem Central com Texto */}
         <div
-          className="relative z-10 mx-4 flex flex-col justify-center items-center cursor-pointer"
+          className="relative z-10 mx-4 flex flex-col justify-center items-center cursor-pointer rounded-xl overflow-hidden"
           onClick={nextSlide}
           style={{
             width: '100%',
@@ -85,14 +85,14 @@ const Carousel: React.FC = () => {
             className="w-full h-auto"
           />
 
-          <div className="absolute bottom-4 text-white text-xl font-bold bg-transparent p-2 rounded text-reddark">
+          <div className="absolute bottom-4 text-white text-xl font-bold bg-transparent p-2 text-reddark rounded-xl overflow-hidden">
             {slides[currentIndex].text}
           </div>
         </div>
 
         {/* Imagem à direita */}
         <div
-          className="relative cursor-pointer hidden lg:block"
+          className="relative cursor-pointer hidden lg:block rounded-xl overflow-hidden"
           onClick={nextSlide}
           style={{
             transform: `translateX(-${imageDistancePercent}%)`,
@@ -106,7 +106,7 @@ const Carousel: React.FC = () => {
             alt={`Slide ${slides[getNextIndex()].id}`}
             fill
             style={{ objectFit: 'cover' }}
-            className="opacity-50 blur-sm"
+            className="opacity-50 backdrop-blur-sm"
           />
         </div>
 
@@ -145,5 +145,3 @@ const Carousel: React.FC = () => {
     </div>
   )
 }
-
-export default Carousel

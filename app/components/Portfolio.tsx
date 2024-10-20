@@ -7,8 +7,8 @@ export default function Portfolio() {
     <section
       className={`px-32 pt-16 pb-48 flex flex-col gap-16 ${styles.carouselContainer}`}
     >
-      <h1 className="text-5xl text-redlight text-center">
-        ALGUNS PROJETOS NOSSOS:
+      <h1 className="text-5xl text-graydark text-center">
+        ALGUNS <span className="text-redlight">PROJETOS</span> NOSSOS:
       </h1>
       <Carousel />
     </section>

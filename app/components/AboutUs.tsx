@@ -4,7 +4,7 @@ import styles from '@/app/styles/aboutus.module.scss'
 export default function AboutUs() {
   return (
     <section className={`px-32 pb-48 bg-redlight ${styles.aboutUsContainer}`}>
-      <section className={`${styles.aboutUs}`}>
+      <section className={`flex flex-col gap-8 ${styles.aboutUs}`}>
         <h2 className="text-5xl text-[#fff]">QUEM SOMOS?</h2>
         <p className="text-xl text-[#fff] max-w-128">
           Somos uma empresa especializada em{' '}

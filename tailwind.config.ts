@@ -16,6 +16,7 @@ const config: Config = {
     colors: {
       lightblue: '#8ecaed',
       blue: '#4E93BC',
+      darkblue: '#232638',
       redlight: '#DA6666',
       reddark: '#9C4E4E',
       graydark: '#434343',

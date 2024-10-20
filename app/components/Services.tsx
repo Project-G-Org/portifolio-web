@@ -39,7 +39,7 @@ export default function Services() {
         <h2
           className={`${styles.section1Title} text-5xl text-gray text-left w-full`}
         >
-          NOSSOS SERVIÇOS
+          NOSSOS <span className="text-redlight">SERVIÇOS</span>
         </h2>
         <ul className="text-reddark flex flex-col gap-8 text-xl w-full">
           {services.map((service, index) => (
